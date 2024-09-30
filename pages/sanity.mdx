@@ -1,0 +1,64 @@
+## If setting up own CMS
+
+Note: The `.env` keys are pre-set up with a Sanity Studio with few sample events.
+
+If you are using your own Sanity CMS project keys, you need to create a project on Sanity CMS first.
+
+1. Create a new project on Sanity
+
+![Sanity 6](/sanity-6.png)
+
+2. Create a dataset under the newly created project
+
+![Sanity 7](/sanity-7.png)
+
+3. Add localhost in CORS origin section
+
+```text copy
+http://localhost:3000
+```
+
+```text copy
+http://localhost:4000
+```
+
+Create a new API token (with developer permission)
+
+![Sanity 8](/sanity-8.png)
+
+Update the following `.env` files with your keys
+
+```js copy
+# https://github.com/vercel/next.js/tree/canary/examples/cms-sanity#using-the-sanity-cli
+
+NEXT_PUBLIC_SANITY_PROJECT_ID=<your-sanity-project-id>
+NEXT_PUBLIC_SANITY_DATASET=<your-sanity-dataset-name>
+SANITY_API_READ_TOKEN=<your-sanity-api-token>
+NEXT_PUBLIC_SANITY_API_TOKEN=<your-sanity-api-token>
+```
+
+## How to populate events using Sanity Studio
+
+1. Run the application using a local build or a Docker build.
+
+2. Open http://localhost:3000/studio or http://localhost:4000/studio in your browser to access Sanity Studio.
+
+3. Log in to your Sanity account where the Event Booking project is located.
+
+![Sanity 1](/sanity-1.png)
+
+4. Then select the “Structure” tab (or navigate to the /studio/structure page).
+
+![Sanity 2](/sanity-2.png)
+
+5. On the left, select “Event.”
+
+![Sanity 3](/sanity-3.png)
+
+6. Click the “+” button to create a new event document and fill in the fields. For images, you can click “Select” and then “Unsplash” to choose one.
+
+![Sanity 4](/sanity-4.png)
+
+7. Publish the event (there is a “Publish” button at the bottom right).
+
+![Sanity 5](/sanity-5.png)

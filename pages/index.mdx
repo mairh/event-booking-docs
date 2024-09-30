@@ -1,0 +1,78 @@
+## Overview
+
+![Event Booking List](/event-booking-2.png)
+
+![Admin Panel Users](/admin-2.png)
+
+### Project Structure
+
+The project structure presents generally accepted guidelines and patterns for building scalable web applications.
+
+The structure is _fractal_ meaning the available functionality is grouped primarily by feature rather than by file type. The module grouping can also be done based on the routes.
+
+```text
+event-booking
+├── docker/                         # dockerfiles for event app and admin panel
+├── src                             # Application code
+│   ├── app/*                       # NextJS App router
+│   │   ├── events-booking/*        # Entry point for event booking app
+│   │   ├── sanity/*                # Entry point for sanity studio app
+│   │   ├── admin-panel/*           # Entry point for admin panel
+│   │   ├── api/*                   # NextJS server side
+│   │   ├─────── globals.css        # Tailwind global imports
+│   │   └─────── providers.tsx      # NextJS server session provider
+│   ├── modules/*                   # Fractal based module system
+│   │   ├── admin-panel/*           # Admin panel components
+│   │   └── auth/*                  # Auth components (shared)
+│   │   └── common/*                # Common components (shared)
+│   │   └── data/*                  # Sample data components (shared)
+│   │   └── event/*                 # Events components (shared)
+│   │   └── redis/*                 # Redis init
+│   └── middleware.ts               # Middleware to configure app and admin panel
+├── .env.local                      # Environment variables for event booking app
+├── .env.admin.local                # Environment variables for admin panel
+├── .eslintrc.js                    # Eslint rules
+├── .nvmrc                          # For nodejs version control
+├── .prettierrc.js                  # Prettier rules
+├── docker-compose.yml              # Docker-compose config
+├── next.config.js                  # NextJs config
+├── sanity.cli.ts                   # Sanity CLI config
+├── sanity.config.ts                # Sanity Base config
+├── sanity.types.ts                 # Sanity types structure
+├── tailwind.config.ts              # Tailwind css config with daisyui plugin
+└── tsconfig.json                   # Lint config
+```
+
+### Tech Stack
+
+##### Language
+
+Using `TypeScript`
+
+##### Frontend
+
+Using `React` with `NextJS` framework
+
+##### Backend
+
+Using `NextJS` server side API
+
+##### Database
+
+Using `Redis` to cache data
+
+##### Authentication
+
+Using `NextAuth`
+
+##### CMS
+
+Using `Sanity CMS` to save event data
+
+##### UI
+
+Using `TailwindCSS` with `DaisyUI`
+
+##### Build and Deployment
+
+Using `Docker`

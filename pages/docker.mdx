@@ -1,0 +1,135 @@
+## Running app with docker
+
+#### _Clone the code from repo locally from GitHub_
+
+```text copy
+git clone https://github.com/mairh/event-booking.git
+```
+
+#### _Nativate to folder_
+
+```text copy
+cd event-booking
+```
+
+#### _Check Node via nvm_
+
+```text copy
+nvm use
+```
+
+#### _Install dependencies_
+
+```text copy
+yarn
+```
+
+#### _Run project with docker_
+
+```text copy
+docker compose up -d
+```
+
+Then open http://localhost:3000 in your browser for event booking app
+
+Then open http://localhost:4000 in your browser for admin panel
+
+![Docker](/docker.png)
+
+#### _Sample login_
+
+```json copy
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "user001",
+      "password": "Password123!",
+      "name": "User1",
+      "role": "user"
+    },
+    {
+      "id": "2",
+      "username": "user002",
+      "password": "PassWord321!",
+      "name": "User2",
+      "role": "user"
+    },
+    {
+      "id": "3",
+      "username": "user003_admin",
+      "password": "Adminpass123!",
+      "name": "Admin3",
+      "role": "admin"
+    },
+    {
+      "id": "4",
+      "username": "user004",
+      "password": "AnotherPass321!",
+      "name": "User4",
+      "role": "user"
+    },
+    {
+      "id": "5",
+      "username": "user005",
+      "password": "Pass123!word",
+      "name": "User5",
+      "role": "user"
+    }
+  ]
+}
+```
+
+Username and password written in the /src/modules/data/users.json file.
+
+#### _Copy Environment variables_
+
+##### .env.local
+
+```js copy
+# https://github.com/vercel/next.js/tree/canary/examples/cms-sanity#using-the-sanity-cli
+
+NEXT_PUBLIC_SANITY_PROJECT_ID=xawx3rrp
+NEXT_PUBLIC_SANITY_DATASET=event-booking
+SANITY_API_READ_TOKEN=skInGsRXdho0fgRz4maJo6vmLcTddHX65WkiAJ5Fe3z1GSPHFEwc0kCJtpT5jtUy79MFvuOSil4W5veEQEz9FuAPtwdQJWQTqaWZgZOY5XQZzK5cBAJfr3LOxppw8rNKUkfUZYu5zroKFVGzPTxZSX1DvLHsh8gK0jECtiw5RRxgvecrkT0u
+NEXT_PUBLIC_SANITY_API_TOKEN=skInGsRXdho0fgRz4maJo6vmLcTddHX65WkiAJ5Fe3z1GSPHFEwc0kCJtpT5jtUy79MFvuOSil4W5veEQEz9FuAPtwdQJWQTqaWZgZOY5XQZzK5cBAJfr3LOxppw8rNKUkfUZYu5zroKFVGzPTxZSX1DvLHsh8gK0jECtiw5RRxgvecrkT0u
+
+# For NextAuth
+NEXTAUTH_SECRET=PCAzG3MIywDOp4BJv3v3wVUu06EvzI/vgYMWF3rSh+I=
+NEXTAUTH_URL=http://localhost:3000
+NEXT_PUBLIC_JWT_TOKEN_MAX_AGE=3600
+
+# Redis
+NEXT_PUBLIC_REDIS_PORT=6379
+
+# Should be the same as in NEXTAUTH_URL
+NEXT_PUBLIC_PORT=3000
+
+# Constant
+NEXT_PUBLIC_ADMIN_PORT=4000
+```
+
+##### .env.admin.local
+
+```js copy
+# https://github.com/vercel/next.js/tree/canary/examples/cms-sanity#using-the-sanity-cli
+
+NEXT_PUBLIC_SANITY_PROJECT_ID=xawx3rrp
+NEXT_PUBLIC_SANITY_DATASET=event-booking
+SANITY_API_READ_TOKEN=skInGsRXdho0fgRz4maJo6vmLcTddHX65WkiAJ5Fe3z1GSPHFEwc0kCJtpT5jtUy79MFvuOSil4W5veEQEz9FuAPtwdQJWQTqaWZgZOY5XQZzK5cBAJfr3LOxppw8rNKUkfUZYu5zroKFVGzPTxZSX1DvLHsh8gK0jECtiw5RRxgvecrkT0u
+NEXT_PUBLIC_SANITY_API_TOKEN=skInGsRXdho0fgRz4maJo6vmLcTddHX65WkiAJ5Fe3z1GSPHFEwc0kCJtpT5jtUy79MFvuOSil4W5veEQEz9FuAPtwdQJWQTqaWZgZOY5XQZzK5cBAJfr3LOxppw8rNKUkfUZYu5zroKFVGzPTxZSX1DvLHsh8gK0jECtiw5RRxgvecrkT0u
+
+# For NextAuth
+NEXTAUTH_SECRET=PCAzG3MIywDOp4BJv3v3wVUu06EvzI/vgYMWF3rSh+I=
+NEXTAUTH_URL=http://localhost:4000
+NEXT_PUBLIC_JWT_TOKEN_MAX_AGE=3600
+
+# Redis
+NEXT_PUBLIC_REDIS_PORT=6379
+
+# Should be the same as in NEXTAUTH_URL
+NEXT_PUBLIC_PORT=4000
+
+# Constant
+NEXT_PUBLIC_ADMIN_PORT=4000
+```

@@ -1,0 +1,42 @@
+# Event booking App
+
+Task Description
+
+You will create an event booking system where users can add events to their schedules. The application should be built using TypeScript, TailwindCSS, and integrated with Sanity CMS for event management. User data should be stored in Redis, with predefined users stored in a JSON file. The application should also include an admin panel that displays a real-time list of users and their schedules, updated via Server-Sent Events (SSE). Authentication should be implemented using NextAuth with custom logic for login, generating JWT tokens for authenticated users. A key requirement is that the entire application should be Dockerized, with seed scripts provided, and easily runnable on any machine with clear documentation. The overall presentation and user experience of the application will also be assessed.
+
+Requirements
+
+1.      Event Booking System
+-    Develop an event booking system where users can add, view, and manage events to their schedule.
+-    Events should be stored and managed in Sanity CMS.
+-    Users should be able to log in and store their event data in Redis.
+-    Ensure the application is fully responsive using TailwindCSS.
+-    Use a component library or template such as DaisyUI, ShadCN, or similar to ensure clean UI/UX.
+-    Predefine 5 users with unique usernames and passwords stored in a JSON file. These users should be used for authentication. There should be 2 roles Admin and User. Note that Admin is also a user with elevated access.
+2.      Authentication and Authorization
+-    Implement authentication using NextAuth.
+-    Create custom logic for logging in users and generate JWT tokens for authenticated sessions.
+-    Ensure secure storage and handling of JWT tokens.
+3.      Admin Panel
+-    Create an admin panel that lists all users and their event schedules.
+-    Implement real-time updates using Server-Sent Events (SSE) to refresh the user list and schedules on the admin panel.
+-    Ensure the admin panel is user-friendly and secure.
+4.      CMS Integration
+-    Integrate the application with Sanity CMS to manage event data.
+-    Provide a setup guide or script for initializing the CMS with sample events.
+5.      Data Management
+-    Use Redis to store user-specific event data.
+-    Ensure that the application interacts smoothly between Redis and Sanity CMS for data management.
+6.      Dockerization and Seed Scripts
+-    Dockerize the entire application.
+-    Provide a Dockerfile and any necessary configuration files.
+-    Include seed scripts for initializing the CMS with predefined users and sample events.
+-    Ensure the application can be run on any machine using Docker, simply by providing environment variables.
+7.      Documentation
+-    Provide clear, detailed documentation on how to set up and run the application locally.
+-    Include instructions for configuring environment variables and running seed scripts.
+-    Ensure the documentation covers any prerequisites, common troubleshooting steps, and a clear guide on how to use the application.
+8.      Code Quality
+-    Ensure the code is well-structured, commented, and follows best practices.
+9.      Presentation
+-    The overall presentation and user experience of the application will be assessed. This includes the clarity of the UI, smoothness of the user interactions, and the general polish of the final product.

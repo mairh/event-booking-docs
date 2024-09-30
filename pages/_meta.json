@@ -1,0 +1,16 @@
+{
+  "index": "Overview",
+  "docker": "Docker Set Up",
+  "local": "Local Set Up",
+  "sanity": "Sanity Studio Set Up",
+  "update": "Upgrading Project",
+  "settings": "Settings & Env Vars",
+  "screenshots": {
+    "title": "Screenshots",
+    "type": "page"
+  },
+  "about": {
+    "title": "About",
+    "type": "page"
+  }
+}

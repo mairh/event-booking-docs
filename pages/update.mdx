@@ -1,0 +1,23 @@
+## Upgrading the App when running with docker
+
+#### _Pull the latest changes from Git repo_
+
+```text copy
+git pull
+```
+
+#### _Install dependencies_
+
+```text copy
+yarn
+```
+
+#### _Build new local image with docker_
+
+```text copy
+docker compose up --build -d
+```
+
+Then open http://localhost:3000 in your browser for event booking app
+
+Then open http://localhost:4000 in your browser for admin panel
